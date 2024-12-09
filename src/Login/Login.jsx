@@ -7,7 +7,7 @@ function Login() {
   const [showpass, setShowpass] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  // Load dark mode preference from localStorage
+  // Dark mode 
   useEffect(() => {
     const storedDarkMode = localStorage.getItem("darkMode") === "true";
     setDarkMode(storedDarkMode);
