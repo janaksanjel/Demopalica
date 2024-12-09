@@ -1,0 +1,267 @@
+/* Main container - modern gradient and full responsiveness */
+
+
+
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #68f37f, #1348aa);
+    background-size: 200% 200%;
+    animation: gradientBackground 8s ease infinite;
+
+
+}
+
+
+
+
+
+
+
+
+/* Background animation */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Login form styling */
+.login-form {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+/* Heading styling */
+h2 {
+    font-size: 22px;
+    color: #444;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+}
+
+/* Input fields */
+.form-group input {
+
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 17px;
+    color: #444;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+/* Password toggle */
+/* Password toggle - simple and clean */
+.password-toggle {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #666;
+    transition: color 0.3s ease;
+    padding-top: 20px;
+}
+
+/* Hover effect */
+.password-toggle:hover {
+    color: #007bff;
+}
+
+
+/* Button styling */
+.logbtn button {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.logbtn button:hover {
+    background: linear-gradient(to right, #0056b3, #003f7f);
+    transform: translateY(-2px);
+}
+
+
+/* Input fields - polished appearance */
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Button hover effect */
+.logbtn button {
+    background: linear-gradient(to right, #28a745, #218838);
+    font-weight: bold;
+    color: #fff;
+    padding: 12px;
+    border: none;
+
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.logbtn button:hover {
+    background: linear-gradient(to right, #218838, #19692c);
+    transform: translateY(-2px);
+}
+
+
+
+
+
+/* Designer button */
+.loginrig button {
+    background-color: #b3000f;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.loginrig button:hover {
+    background-color: #970202;
+}
+
+/* Forgot password link */
+.forgot-password {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .login-form {
+        padding: 20px;
+        max-width: 350px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .form-group input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .logbtn button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .password-toggle {
+        font-size: 14px;
+        right: 8px;
+    }
+}
+
+/* Additional tweaks for small screens */
+@media (max-width: 480px) {
+    .login-form {
+        padding: 15px;
+        max-width: 320px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .form-group input {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .logbtn button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .password-toggle {
+        font-size: 18px;
+        right: 6px;
+    }
+}
