@@ -1,37 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-
+import Header from "./header/Header";
+import { Route, Routes, useLocation } from "react-router-dom";
+import Category from "./category/Category";
+import Chart from "./Chart/Chart";
 import Login from "./Login/Login";
-import App2 from "./App2";
 
+const App = () => {
+  const Location = useLocation();
 
-function App() {
-  
+  const navi = Location.pathname==="/Chart"
   return (
-
-    <>
-    
-    <Routes>
-        {/* Login Page Route */}
-        <Route path="/" element={<Login />} />
-      
-        {/* Header Routes */}
-        <Route path="/*" element={<App2 />} />
-        
-        
+    <> 
+      {navi && <Header/>}
+      {navi && <Category/>}
+      <Routes>
+        <Route path="/" element={<Login/>}/>
+        <Route path="/Chart" element={<Chart />} />
       </Routes>
-      
-     
-    
     </>
-    
-      
-          
-            
-          
-   
-    
   );
-}
+};
 
 export default App;

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import './Chart.css'
+import DarkMode from "../DarkMode/DarkMode";
 
 
 const data = [
@@ -33,7 +35,9 @@ const data = [
 export class Chart extends Component {
   render() {
     return (
-      <div className="home-page-container">
+      <>
+      
+      {/* <div className="Chart-main">
         <h2>गुनासोहरुको स्थिति</h2> 
         <ResponsiveContainer width="100%" height={400}>
           <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
@@ -46,7 +50,8 @@ export class Chart extends Component {
             <Bar dataKey="आजको गुनासो" fill="#82ca9d" />
           </BarChart>
         </ResponsiveContainer>
-      </div>
+      </div> */}
+      </>
     );
   }
 }

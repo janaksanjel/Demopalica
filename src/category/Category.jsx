@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./Category.css";
 import DarkMode from "../DarkMode/DarkMode";
-import Chart from "../Chart/Chart";
+
 
 const Category = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -17,12 +17,14 @@ const Category = () => {
     <div className="category-box">
       {/* Fiscal Year Section */}
       <div className="category-header">
-        <p>चालु आर्थिक वर्ष: २०८१/०८२</p>
-        <p>आर्थिक वर्ष: २०८०/०८२</p>
-      </div>
+        <h4>चालु आर्थिक वर्ष: २०८१/०८२</h4>
+        <h4>आर्थिक वर्ष: २०८०/०८२</h4>
+        </div>
 
       {/* Menu Items */}
       <ul className="category-list">
+        
+      
         {/* Main Page */}
         <NavLink to="/Chart" className="sidebar-option" exact activeClassName="active">
           <span>🏠</span>
@@ -53,7 +55,7 @@ const Category = () => {
           <i className={`fa ${openDropdown === 1 ? "fa-chevron-down" : "fa-chevron-right"}`}></i>
         </div>
         {openDropdown === 1 && (
-          <div className="dropdown-menu">
+          <div className="dropdown">
             <NavLink to="/admin/registration" className="sidebar-option" exact activeClassName="active">
               <p>दर्ता / चलानी</p>
             </NavLink>
@@ -77,7 +79,7 @@ const Category = () => {
           <i className={`fa ${openDropdown === 2 ? "fa-chevron-down" : "fa-chevron-right"}`}></i>
         </div>
         {openDropdown === 2 && (
-          <div className="dropdown-menu">
+          <div className="dropdown">
             <NavLink to="/justice/court" className="sidebar-option" exact activeClassName="active">
               <p>अदालत</p>
             </NavLink>
@@ -155,7 +157,7 @@ const Category = () => {
           exact
           activeClassName="active"
         >
-          <span>🏢</span>
+          <span>🏢</span>s
           <p>नगर प्रोफाइल</p>
         </NavLink>
         
@@ -262,7 +264,7 @@ const Category = () => {
       
     </div>
 
-    <Chart/>
+ 
     </>
   );
 };

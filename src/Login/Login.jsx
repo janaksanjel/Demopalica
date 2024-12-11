@@ -35,7 +35,7 @@ function Login() {
     // Dummy login (replace with real API call)
     if (username === "0" && password === "0") {
       console.log("Logged in successfully!");
-      navigate("/Header");
+      navigate("/Chart");
     } else {
       setError("अवैध प्रयोगकर्तानाम वा पासवर्ड।");
     }
@@ -43,6 +43,7 @@ function Login() {
 
   return (
     <>
+    
       <div className="container">
         {/* Dark Mode Toggle */}
         <DarkMode />

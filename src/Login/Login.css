@@ -1,29 +1,22 @@
 /* Main container - modern gradient and full responsiveness */
-
 .container {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
+    
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     font-family: 'Arial', sans-serif;
     background-size: 200% 200%;
     animation: gradientBackground 8s ease infinite;
-
-
-}
-
-/* Light Mode - Default */
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    background: linear-gradient(to right, #26da26, #094ee2);
     filter: drop-shadow(0 0 10px white);
-    
-    background-size: 200% 200%;
-    animation: gradientBackground 8s ease infinite;
-    color: #000000;
+    color: white;
 }
+/* Light Mode - Default */
+
 
 .login-form {
     background: #ffffff;
@@ -44,11 +37,6 @@ body {
 
 
 /* Dark Mode */
-body.dark-mode {
-    background: linear-gradient(to right, #000000, #000000);
-    color: #ddd;
-}
-
 body.dark-mode .login-form {
     background: #2a2a2a;
     color: #ddd;
@@ -87,7 +75,7 @@ body.dark-mode .forgot-password {
 .dark-mode-toggle button {
     position: absolute;
     top: 20px;
-    left: 2s0px;
+    left: 1%;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -95,14 +83,13 @@ body.dark-mode .forgot-password {
     border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition:  0.3s ease, transform 0.2s ease;
 }
 
 .dark-mode-toggle button:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
-
 
 /*Animation Snowflakes*/
 .snowflake {
@@ -338,6 +325,9 @@ h2 {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+
+
+
     .login-form {
         padding: 20px;
         max-width: 350px;

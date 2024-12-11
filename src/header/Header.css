@@ -20,9 +20,13 @@ body {
   
 }
 
-.dark-mode {
-  background-color: #121212; /* Dark background for the body */
-  color: white; /* White text for dark mode */
+.headerdark {
+  position: absolute; /* Position it relative to the viewport */
+  /* Position it 10px from the top */
+  left: 50%; /* Center it horizontally */
+   /* Adjust position to make it perfectly centered */
+  z-index: 1000;
+   /* Ensure it stays on top of other elements */
 }
 
 
@@ -85,6 +89,11 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+.headmain h3{
+  color: rgb(0, 0, 0);
+  width: 50%;
+}
+
 .headmain.dark-mode {
   background-color: #333333; /* Dark background in dark mode */
   color: #ffffff; /* White text */
@@ -95,7 +104,7 @@ body {
 }
 
 .header h2 {
-  color: #333;
+  color: #000000;
 }
 
 .headmain.dark-mode .header h2 {
@@ -127,10 +136,11 @@ select {
 
 
 
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .headmain{
-    height: 15vh;
+    height: 5vh;
   }
   .header {
     
@@ -138,8 +148,16 @@ select {
     text-align: center;
   }
 
-  .name h2 {
+  .header h2{
+    
     font-size: 0.5cm;
+    padding-top: 19px;
+ 
+  }
+  .header h4{
+    
+    font-size: 0.3cm;
+    
  
   }
 
@@ -147,25 +165,37 @@ select {
     margin: 10px 0;
     display: grid;
     width: 100%;
+    padding-left: -15px;
   }
 
   .imageheader img {
     max-width: 100px;
+    padding-bottom: 7px;
+    
   }
 }
 
 @media (max-width: 480px) {
-  .name h2 {
-    font-size: 1.2rem;
+  .header h2 {
+    margin-left: -15px;
+    font-size: 0.4cm;
   }
 
   #fiscal-year-select {
     font-size: 0.9rem;
-    width: 100%; /* Full width dropdown for smaller screens */
+    width: 100%;
+     /* Full width dropdown for smaller screens */
+  }
+  .date-year {
+    height: 5vh;
+    display: grid;
+    width: 100%;
+    padding-left: -20px;
   }
 
   .imageheader img {
     max-width: 80px;
+    margin-left: -25px;
   }
 
   .header {
@@ -180,10 +210,9 @@ select {
 
 /* Light Mode Styles */
 .search-container {
-  padding: 20px;
-  top: 10%;
-  width: 100%;
-  margin: auto;
+  
+  width: 80%;
+  
   box-sizing: border-box;
 }
 
@@ -237,6 +266,9 @@ select {
   text-align: center;
 }
 
+
+
+
 /* Responsive Design */
 @media (max-width: 600px) {
   .search-container {
@@ -253,4 +285,123 @@ select {
     font-size: 14px;
     padding: 8px;
   }
+  .dropdown-toggle{
+    margin-left: 50px;
+  }
+}
+
+
+
+
+/* Setting */
+
+/* Dropdown Container */
+.dropdown-container {
+  position: relative;
+  
+  width: 70%;
+  
+}
+
+/* Dropdown Button */
+.dropdown-toggle {
+  background-color: transparent;
+  margin-left: 200px;
+  font-size: 20px;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 5%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  width: 250px;
+  z-index: 1000;
+  list-style: none;
+ 
+}
+
+/* Menu Items */
+.menu-item {
+  padding: 10px 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid #000000;
+}
+
+.menu-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Section Header */
+.menu-header {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  background-color: #f9f9f9;
+  
+}
+
+/* Icons and Text Alignment */
+.menu-item span,
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dark-mode .dropdown-menu {
+  background-color: #444444; /* Dark background for fiscal year dropdown */
+  color: white;
+}
+.dark-mode .menu-item
+{
+  background-color: #000000;
+  color: white;
+  border-bottom: 1px solid #ffffff;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    width: 120%; /* Full width on mobile */
+    right: 0;
+    left: 0;
+    margin-top: 480px;
+    position: static;
+    box-shadow: none;
+    border: none;
+    
+  }
+
+  .menu-item {
+    width: 100%;
+    font-size: 0.4rem;
+    padding: 8px 10px;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1px;
+    margin-left: 21px;
+    position: relative;
+    
+  }
+  
 }

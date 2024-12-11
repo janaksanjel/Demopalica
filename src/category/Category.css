@@ -6,10 +6,10 @@
 }
 
 .category-list {
-  list-style-type: none;
+  
   padding: 0;
   margin: 0;
-  height: 80vh;  /* Adjust the height as needed */
+  height: 88vh;  /* Adjust the height as needed */
   overflow-y: auto;
   text-decoration: none;  /* Makes the menu scrollable */
 }
@@ -18,6 +18,7 @@
 .sidebar-option
   {
     text-decoration: none;
+    border-bottom: 1px solid #000000;
     
   }
 
@@ -26,14 +27,20 @@
     justify-content: end;
   }
 
+  .category-list p{
+    color: black;
+    font-size: 0.3cm;
+  }
+
   /* Header Styling */
   .category-header {
-    background-color: #2a4780;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 10px;
     font-size: 14px;
     font-weight: bold;
+    border: 1px solid #000000;
   }
 
   .category-list .sidebar-option {
@@ -48,8 +55,8 @@
     background-color: #f1f1f1; /* Add hover effect */
   }
   
-  .category-list .dropdown-menu {
-    padding-left: 20px;
+  .category-list .dropdown {
+   
     background-color: #f9f9f9;
   }
   
@@ -92,10 +99,6 @@
   }
 
   /* Dark mode styles */
-.dark-mode {
-  background-color: #121212; /* Dark background */
-  color: #ffffff; /* Light text */
-}
 
 /* Dark mode specific styles for the category box */
 .dark-mode .category-box {
@@ -104,6 +107,12 @@
 
 .dark-mode .category-header {
   background-color: #000000; /* Darker color for header */
+  color: white;
+  border: 1px solid white;
+}
+
+.dark-mode .category-list p{
+  
   color: white;
 }
 
@@ -117,11 +126,11 @@
   background-color: #444444; /* Darker hover effect */
 }
 
-.dark-mode .category-list .dropdown-menu {
+.dark-mode .category-list .dropdown {
   background-color: #222222;
 }
 
-.dark-mode .category-list .dropdown-menu .sidebar-option:hover {
+.dark-mode .category-list .dropdown .sidebar-option:hover {
   background-color: #333333;
 }
 
@@ -146,6 +155,9 @@
       padding: 8px 10px;
        /* Reduce padding for smaller screens */
     }
+    .category-list{
+      height: 69.5vh;
+    }
   
     .icon {
       font-size: 14px; /* Smaller icon on mobile */
@@ -155,7 +167,7 @@
   @media (max-width: 480px) {
     /* Adjust sidebar width even more on very small screens */
     .category-box {
-      width: 38%; /* Full width on very small screens */
+      width: 37%; /* Full width on very small screens */
       position: relative; /* Make the sidebar not fixed */
     }
   
@@ -164,7 +176,7 @@
       padding: 6px;
     }
     .category-list{
-      height: 69.5vh;
+      height: 77vh;
     }
   
     .category-list li {

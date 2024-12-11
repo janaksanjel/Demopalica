@@ -1,49 +1,14 @@
-/* Dark Mode */
+
+/* Dark Mode Body */
 body.dark-mode {
     background: linear-gradient(to right, #000000, #000000);
     color: #ddd;
 }
 
-body.dark-mode .login-form {
-    background: #2a2a2a;
-    color: #ddd;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode .form-group input {
-    background: #444;
-    color: #ddd;
-    border-color: #555;
-}
-
-body.dark-mode .form-group input:focus {
-    border-color: #00aaff;
-    box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
-}
-
-body.dark-mode .logbtn button {
-    background: linear-gradient(to right, #006400, #003f1f);
-    color: #ddd;
-}
-
-body.dark-mode .password-toggle {
-    color: #aaa;
-}
-
-body.dark-mode .password-toggle:hover {
-    color: #00aaff;
-}
-
-body.dark-mode .forgot-password {
-    color: #00aaff;
-}
-
-/* Dark Mode Toggle Button */
-.dark-mode-toggle button {
-    
-    
-    left: 50%;
-    
+/* .dark-mode-toggle button {
+    position: absolute;
+    top: 20px;
+    left: 2s0px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -52,9 +17,34 @@ body.dark-mode .forgot-password {
     cursor: pointer;
     font-size: 14px;
     transition: background 0.3s ease, transform 0.2s ease;
-}
+} */
 
 .dark-mode-toggle button:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
+}
+
+/* Responsive Design for Dark Mode */
+@media (max-width: 768px) {
+    .dark-mode-toggle button {
+        font-size: 12px; /* Smaller font size */
+        padding: 6px 10px; /* Adjust padding */
+        border-radius: 6px;
+        margin-left: 10px;
+        
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+    .dark-mode-toggle button {
+        font-size: 10px; /* Further reduce font size for small screens */
+        padding: 4px 8px;
+        
+    }
+
+    body.dark-mode {
+        font-size: 14px; /* Adjust text size */
+    }
 }
