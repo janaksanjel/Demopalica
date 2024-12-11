@@ -1,0 +1,50 @@
+
+/* Dark Mode Body */
+body.dark-mode {
+    background: linear-gradient(to right, #000000, #000000);
+    color: #ddd;
+}
+
+/* .dark-mode-toggle button {
+    position: absolute;
+    top: 20px;
+    left: 2s0px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease, transform 0.2s ease;
+} */
+
+.dark-mode-toggle button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design for Dark Mode */
+@media (max-width: 768px) {
+    .dark-mode-toggle button {
+        font-size: 12px; /* Smaller font size */
+        padding: 6px 10px; /* Adjust padding */
+        border-radius: 6px;
+        margin-left: 10px;
+        
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+    .dark-mode-toggle button {
+        font-size: 10px; /* Further reduce font size for small screens */
+        padding: 4px 8px;
+        
+    }
+
+    body.dark-mode {
+        font-size: 14px; /* Adjust text size */
+    }
+}

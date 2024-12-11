@@ -1,0 +1,190 @@
+/* Container Styling */
+.category-box {
+  /* Other styling for the category box */
+  width: 250px;
+  padding: 0;
+}
+
+.category-list {
+  
+  padding: 0;
+  margin: 0;
+  height: 88vh;  /* Adjust the height as needed */
+  overflow-y: auto;
+  text-decoration: none;  /* Makes the menu scrollable */
+}
+
+
+.sidebar-option
+  {
+    text-decoration: none;
+    border-bottom: 1px solid #000000;
+    
+  }
+
+  .category-list i{
+    padding-left: 50px;
+    justify-content: end;
+  }
+
+  .category-list p{
+    color: black;
+    font-size: 0.3cm;
+  }
+
+  /* Header Styling */
+  .category-header {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #000000;
+  }
+
+  .category-list .sidebar-option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-list .sidebar-option:hover {
+    background-color: #f1f1f1; /* Add hover effect */
+  }
+  
+  .category-list .dropdown {
+   
+    background-color: #f9f9f9;
+  }
+  
+  .category-list .dropdown-item {
+    padding: 5px 0;
+  }
+  
+  .category-list hr {
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+  
+  .sidebar-option.open {
+    background-color: #e0e0e0; /* Active dropdown item */
+  }
+  .category-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .category-list li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Hover Effect */
+  .category-list li:hover {
+    background-color: #dce4f0;
+  }
+  
+  /* Icon Styling */
+  .icon {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #2a4780;
+  }
+
+  /* Dark mode styles */
+
+/* Dark mode specific styles for the category box */
+.dark-mode .category-box {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .category-header {
+  background-color: #000000; /* Darker color for header */
+  color: white;
+  border: 1px solid white;
+}
+
+.dark-mode .category-list p{
+  
+  color: white;
+}
+
+.dark-mode .category-list .sidebar-option {
+  background-color: #333333; /* Dark background for menu items */
+  color: #ddd; /* Light text */
+  border-bottom: 1px solid #555; /* Dark border between items */
+}
+
+.dark-mode .category-list .sidebar-option:hover {
+  background-color: #444444; /* Darker hover effect */
+}
+
+.dark-mode .category-list .dropdown {
+  background-color: #222222;
+}
+
+.dark-mode .category-list .dropdown .sidebar-option:hover {
+  background-color: #333333;
+}
+
+.dark-mode .sidebar-option.open {
+  background-color: #555555;
+}
+
+  
+  @media (max-width: 768px) {
+    /* Change category-box width on smaller screens */
+    .category-box {
+      width: 200px; /* Slightly smaller sidebar */
+      
+    }
+  
+    .category-header {
+      font-size: 12px; /* Adjust font size for mobile */
+      padding: 8px;
+    }
+  
+    .category-list li {
+      padding: 8px 10px;
+       /* Reduce padding for smaller screens */
+    }
+    .category-list{
+      height: 69.5vh;
+    }
+  
+    .icon {
+      font-size: 14px; /* Smaller icon on mobile */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Adjust sidebar width even more on very small screens */
+    .category-box {
+      width: 37%; /* Full width on very small screens */
+      position: relative; /* Make the sidebar not fixed */
+    }
+  
+    .category-header {
+      font-size: 10px; /* Adjust font size even further */
+      padding: 6px;
+    }
+    .category-list{
+      height: 77vh;
+    }
+  
+    .category-list li {
+      padding: 6px 8px;
+      height: 100vh; /* Reduce padding more */
+    }
+  
+    .icon {
+      font-size: 12px; /* Even smaller icons */
+    }
+  }
