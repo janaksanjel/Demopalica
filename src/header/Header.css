@@ -1,0 +1,256 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main container */
+.headmain {
+  width: 100%;
+  height: 12vh;
+  background: linear-gradient(to right, #68f37f, #1348aa);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+body {
+  transition: background-color 0.3s, color 0.3s;
+  
+}
+
+.dark-mode {
+  background-color: #121212; /* Dark background for the body */
+  color: white; /* White text for dark mode */
+}
+
+
+
+/* Header */
+.header {
+  display: flex;
+  padding-left: 50px;
+  justify-content: space-between;
+  align-items: center;
+  align-content: end;
+  width: 100%;  
+  max-width: 1200px; /* Restrict max width for larger screens */
+   /* Space between elements */
+}
+
+/* Logo section */
+.imageheader img {
+  max-width: 120px; /* Ensures the logo doesn't get too large */
+  height: auto;
+  padding: 20px;
+  margin-top: 5px;
+}
+
+/* Name section */
+.header h2 {
+  font-size: 1cm;
+  text-align: center;
+  color: #000; /* Change to desired color */
+}
+
+/* Fiscal year selection */
+.date-year {
+  width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#fiscal-year-select {
+  font-size: 1rem;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* SearchBox component alignment */
+.header > div:last-child {
+  flex: 1; /* Allow search box to take available space */
+}
+
+
+/* Header styles */
+.headmain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff; /* Light mode background */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.headmain.dark-mode {
+  background-color: #333333; /* Dark background in dark mode */
+  color: #ffffff; /* White text */
+}
+
+.logo {
+  height: 50px;
+}
+
+.header h2 {
+  color: #333;
+}
+
+.headmain.dark-mode .header h2 {
+  color: #ffffff; /* White text for header title in dark mode */
+}
+
+
+
+.headmain.dark-mode .date-year {
+  background-color: #444444; /* Dark background for fiscal year dropdown */
+  color: white;
+}
+
+select {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.headmain.dark-mode select {
+  background-color: #333333; /* Dark background for select in dark mode */
+  color: #ffffff; /* White text */
+}
+
+
+
+.headmain.dark-mode .dark-mode-toggle button {
+  color: white; /* White text for dark mode toggle button */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .headmain{
+    height: 15vh;
+  }
+  .header {
+    
+    align-items: center;
+    text-align: center;
+  }
+
+  .name h2 {
+    font-size: 0.5cm;
+ 
+  }
+
+  .date-year {
+    margin: 10px 0;
+    display: grid;
+    width: 100%;
+  }
+
+  .imageheader img {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name h2 {
+    font-size: 1.2rem;
+  }
+
+  #fiscal-year-select {
+    font-size: 0.9rem;
+    width: 100%; /* Full width dropdown for smaller screens */
+  }
+
+  .imageheader img {
+    max-width: 80px;
+  }
+
+  .header {
+    padding: 10px;
+  }
+}
+
+
+
+
+/* Search*/
+
+/* Light Mode Styles */
+.search-container {
+  padding: 20px;
+  top: 10%;
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.search-input {
+  width: 70%;
+  padding: 10px;
+  top: 50%;
+  
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+}
+
+.search-results {
+  list-style: none;
+  padding: 0;
+}
+
+.search-item {
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.search-no-results {
+  color: gray;
+  text-align: center;
+}
+
+/* Dark Mode Styles */
+.search-container.dark-mode {
+  background-color: #333;
+}
+
+.search-input.dark-input {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.search-item {
+  background-color: #555;
+  color: #fff;
+}
+
+.search-no-results {
+  color: #aaa;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .search-container {
+    padding: 15px;
+    max-width: 100%; /* Full width on small screens */
+  }
+
+  .search-input {
+    font-size: 14px;
+    padding: 8px; /* Smaller padding on mobile */
+  }
+
+  .search-item {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

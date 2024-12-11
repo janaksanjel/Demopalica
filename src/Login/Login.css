@@ -19,7 +19,7 @@ body {
     padding: 0;
     overflow: hidden;
     filter: drop-shadow(0 0 10px white);
-    background: linear-gradient(to right, #68f37f, #1348aa);
+    
     background-size: 200% 200%;
     animation: gradientBackground 8s ease infinite;
     color: #000000;
@@ -87,7 +87,7 @@ body.dark-mode .forgot-password {
 .dark-mode-toggle button {
     position: absolute;
     top: 20px;
-    left: 20px;
+    left: 2s0px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -211,8 +211,9 @@ body.dark-mode .forgot-password {
 
 /* Logo styling */
 .logo {
-    width: 100px;
+    
     margin-bottom: 15px;
+    
 }
 
 /* Heading styling */
@@ -387,4 +388,12 @@ h2 {
         font-size: 18px;
         right: 6px;
     }
+}
+
+/* Error message */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
 }

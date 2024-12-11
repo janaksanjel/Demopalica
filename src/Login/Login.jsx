@@ -1,70 +1,65 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Login.css";
+import { Link, useNavigate } from "react-router-dom";
+import DarkMode from "../DarkMode/DarkMode";
+
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [showpass, setShowpass] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [showPass, setShowPass] = useState(false);
+  const [error, setError] = useState("");
 
-  // Dark mode 
-  useEffect(() => {
-    const storedDarkMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(storedDarkMode);
-    if (storedDarkMode) {
-      document.body.classList.add("dark-mode");
-    }
-  }, []);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("dark-mode");
-    localStorage.setItem("darkMode", !darkMode);
-  };
+  const navigate = useNavigate();
 
+  // Show/Hide password toggle
   const togglePassword = () => {
-    setShowpass(!showpass);
+    setShowPass(!showPass);
   };
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  // Handle input changes
+  const handleInputChange = (setter) => (event) => {
+    setter(event.target.value);
+    setError(""); // Clear error when typing
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
+  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!username || !password) {
-      alert("Please fill out all fields!");
+      setError("प्रयोगकर्तानाम र पासवर्ड आवश्यक छ!");
       return;
     }
-    console.log("Username:", username);
-    console.log("Password:", password);
+
+    // Dummy login (replace with real API call)
+    if (username === "0" && password === "0") {
+      console.log("Logged in successfully!");
+      navigate("/Header");
+    } else {
+      setError("अवैध प्रयोगकर्तानाम वा पासवर्ड।");
+    }
   };
 
   return (
     <>
-      {/* Snowflakes */}
-      {[...Array(20)].map((_, i) => (
-        <div key={i} className="snowflake">
-          ❅
-        </div>
-      ))}
-
       <div className="container">
         {/* Dark Mode Toggle */}
-        <div className="dark-mode-toggle">
-          <button onClick={toggleDarkMode}>
-            {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
-          </button>
-        </div>
+        <DarkMode />
 
-        {/* Login Form */}
+        {/* Snowflake animation */}
+        {[...Array(20)].map((_, i) => (
+          <div key={i} className="snowflake">
+            ❅
+          </div>
+        ))}
+
+        {/* Designer Registration Button */}
         <div className="loginrig">
           <button>डिजाइनर दर्ता</button>
         </div>
+
+        {/* Login Form */}
         <div className="login-form">
           <img
             src="https://gwp.nirc.com.np/images/logo.png"
@@ -72,6 +67,7 @@ function Login() {
             className="logo"
           />
           <h2>आउनु भएकोमा स्वागत छ!</h2>
+          {error && <p className="error">{error}</p>}
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="username">प्रयोगकर्तानाम</label>
@@ -79,7 +75,7 @@ function Login() {
                 type="text"
                 id="username"
                 value={username}
-                onChange={handleUsernameChange}
+                onChange={handleInputChange(setUsername)}
                 placeholder="प्रयोगकर्तानाम प्रविष्ट गर्नुहोस्"
                 required
               />
@@ -87,24 +83,24 @@ function Login() {
             <div className="form-group">
               <label htmlFor="password">पासवर्ड</label>
               <input
-                type={showpass ? "text" : "password"}
+                type={showPass ? "text" : "password"}
                 id="password"
                 value={password}
-                onChange={handlePasswordChange}
+                onChange={handleInputChange(setPassword)}
                 placeholder="पासवर्ड प्रविष्ट गर्नुहोस्"
                 required
               />
               <span className="password-toggle" onClick={togglePassword}>
-                {showpass ? "🙈" : "👁️"}
+                {showPass ? "🙈" : "👁️"}
               </span>
             </div>
             <div className="logbtn">
               <button type="submit">लग-इन</button>
             </div>
           </form>
-          <a href="#" className="forgot-password">
+          <Link to="/forgot-password" className="forgot-password">
             Forgot Password?
-          </a>
+          </Link>
         </div>
       </div>
     </>
